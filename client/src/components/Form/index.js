@@ -1,27 +1,20 @@
 import React from "react";
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 
-// This file exports the Input, TextArea, and FormBtn components
-
-export function Input(props) {
-  return (
-    <div className="form-group">
-      <input className="form-control" {...props} />
-    </div>
-  );
+function Form(){
+return(
+    <Form>
+        <FormGroup>
+          <Label for="exampleEmail">Email</Label>
+          <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+        </FormGroup>
+        <FormGroup>
+          <Label for="examplePassword">Password</Label>
+          <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+        </FormGroup>
+        <Button onClick={props.onclick}>Submit</Button>
+    </Form>
+);
 }
 
-// export function TextArea(props) {
-//   return (
-//     <div className="form-group">
-//       <textarea className="form-control" rows="20" {...props} />
-//     </div>
-//   );
-// }
-
-export function FormBtn(props) {
-  return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
-      {props.children}
-    </button>
-  );
-}
+export default Form;

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import {ViewBtn, DeleteBtn, SaveBtn} from "../components/Buttons";
-
+import { Jumbotron } from 'reactstrap';
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 
 
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 
 class Books extends Component {
   state = {
@@ -54,6 +54,7 @@ class Books extends Component {
 	render() {
 		return (
 			<div>
+				<Jumbotron>
 				<form>
 				<Input
 					value={this.state.title}
@@ -67,9 +68,7 @@ class Books extends Component {
 					name="author"
 					placeholder="Author"
 				/>
-				<FormBtn
-					onClick={this.handleFormSubmit}
-				>
+				<FormBtn onClick={this.handleFormSubmit}>
 					Submit
 				</FormBtn>
 				</form>
@@ -85,6 +84,8 @@ class Books extends Component {
 						</div>
 					))}
 				</div>
+
+				</Jumbotron>
 			</div>
 		);
 	}
